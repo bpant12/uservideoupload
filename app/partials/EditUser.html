@@ -1,0 +1,135 @@
+<div >
+  <table class="table table-bordered table-hover table-condensed">
+    <tr style="font-weight: bold">
+             <td>_id</td>
+             <td>username</td>
+              <td>password</td>
+              <td>securityquestion</td>
+              <td>securityanswer </td>
+              <td>recoveryemail</td>
+              <td>recoveryphone</td>
+              <td>isverified</td>
+              <td>comment</td>
+              <td>proxy</td>
+              <td>proxyuser</td>
+              <td>proxypassword</td>
+              <td>lastCommentTime</td>
+    </tr>
+    <tr ng-repeat="user in users">
+    <td>
+        <!-- editable username (text with validation) -->
+        <span editable-text="user._id "  e-name="_id" e-form="rowform" onbeforesave="checkName($data, user.username)" e-required>
+          {{ user._id || 'empty' }}
+        </span>
+      </td>
+      <td>
+        <!-- editable username (text with validation) -->
+        <span editable-text="user.username" e-name="username" e-form="rowform" onbeforesave="checkName($data, user.username)" e-required>
+          {{ user.username || 'empty' }}
+        </span>
+      </td>
+      <td>
+        <span editable-text="user.password" e-name="password" e-form="rowform" onbeforesave="checkName($data, user.username)" e-required>
+          {{ user.password || 'empty' }}
+        </span>
+      </td>
+
+            <td>
+        <span editable-text="user.securityquestion" e-name="securityquestion" e-form="rowform" onbeforesave="checkName($data, user.username)" e-required>
+          {{ user.securityquestion || '' }}
+        </span>
+      </td>
+
+            <td>
+        <span editable-text="user.securityanswer" e-name="securityanswer" e-form="rowform" onbeforesave="checkName($data, user.username)" e-required>
+          {{ user.securityanswer || '' }}
+        </span>
+      </td>
+
+            <td>
+        <span editable-text="user.recoveryemail" e-name="recoveryemail" e-form="rowform" onbeforesave="checkName($data, user.username)" e-required>
+          {{ user.recoveryemail || 'empty' }}
+        </span>
+      </td>
+
+            <td>
+        <span editable-text="user.recoveryphone" e-name="recoveryphone" e-form="rowform" onbeforesave="checkName($data, user.username)" e-required>
+          {{ user.recoveryphone || 'empty' }}
+        </span>
+      </td>
+
+            <td>
+        <span editable-select="user.isverified" e-name="isverified" e-form="rowform" onbeforesave="checkName($data, user.username)" e-ng-options="s.value as s.text for s in statuses">
+          {{ showStatus(user) }}
+        </span>
+      </td>
+
+            <td>
+        <span editable-text="user.comment" e-name="comment" e-form="rowform" onbeforesave="checkName($data, user.username)" e-required>
+          {{ user.comment || '' }}
+        </span>
+      </td>
+
+                  <td>
+        <span editable-text="user.proxy" e-name="proxy" e-form="rowform" onbeforesave="checkName($data, user.username)" e-required>
+          {{ user.proxy || 'empty' }}
+        </span>
+      </td>
+
+                  <td>
+        <span editable-text="user.proxyuser" e-name="proxyuser" e-form="rowform" onbeforesave="checkName($data, user.username)" e-required>
+          {{ user.proxyuser || 'empty' }}
+        </span>
+      </td>
+
+                  <td>
+        <span editable-text="user.proxypassword" e-name="proxypassword" e-form="rowform" onbeforesave="checkName($data, user.username)" e-required>
+          {{ user.proxypassword || 'empty' }}
+        </span>
+      </td>
+
+                        <td>
+        <span editable-text="user.lastCommentTime" e-name="lastCommentTime" e-form="rowform" onbeforesave="checkName($data, user.username)" e-required>
+          {{ user.lastCommentTime || 0 }}
+        </span>
+      </td>
+
+
+
+      <td style="white-space: nowrap">
+        <!-- form -->
+        <form editable-form name="rowform" onbeforesave="saveUser($data, user._id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == user">
+          <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+            save
+          </button>
+          <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
+            cancel
+          </button>
+
+        </form>
+        <div class="buttons" ng-show="!rowform.$visible">
+          <button class="btn btn-primary" ng-click="rowform.$show()">edit</button>
+         
+        </div>  
+
+
+
+         <form editable-form name="rowform1" onbeforesave="removeUser(user._id)" ng-show="rowform1.$visible" class="form-buttons form-inline" shown="inserted == user">
+          <button type="submit" ng-disabled="rowform1.$waiting" class="btn btn-primary">
+            save
+          </button>
+          <button type="button" ng-disabled="rowform1.$waiting" ng-click="rowform1.$cancel()" class="btn btn-default">
+            cancel
+          </button>
+
+         </form>
+        <div class="buttons" ng-show="!rowform1.$visible">
+          <button class="btn btn-primary" ng-click="rowform1.$show()">delete</button>
+         
+        </div>  
+      </td>
+    </tr>
+  </table>
+
+  <button class="btn btn-default" ng-click="addUser()">Add row</button>
+</div>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <meta charset="utf-8">
+  <title>Google Phone Gallery</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <!-- <link rel="stylesheet" href="css/animations.css"> -->
+<link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/services.js"></script>
+  <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+  <script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">YouTube Uploader</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a >Home</a></li>
+             <li class="dropdown">
+                <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/app/#/user/all">Users List</a></li>
+                  <li><a href="/app/#/edituser">Edit User</a></li>
+                  <li><a href="/app/#/uploaduser">Upload Users</a></li>
+                </ul>
+              </li>
+        
+        
+         <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Video <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/app/#/video/all">Video List</a></li>
+                  <li><a href="/app/#/currentvideo">Current Comments</a></li>
+                  <li><a href="/app/#/uploadvideo">Upload Videos</a></li>
+           <li><a href="/app/#/editvideo">Edit Videos</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+  <div class="view-container">
+    <div ng-view class="view-frame"></div>
+  </div>
+
+</body>
+</html>

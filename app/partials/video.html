@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10">
+      <!--Body content-->
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Video Link</th>
+            <th>Comments</th>
+            <th>Previous Count</th>
+            <th>Previous Time</th>
+            <th>New Count</th>
+            <th>New Time</th>
+            <th>Time Gap</th>
+            <th>Gap Unit</th>
+            <th>Is Ghosted</th>
+            <th>Last Comment Time</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="it in videos">
+        <td>
+         #
+        </td>
+       <td>
+         <a href="{{it.videoLink}}" target="_blank">{{it.videoLink}}</a>
+        </td>
+         <td>
+          {{it.comment}}
+        </td>
+
+        <td>
+          {{it.previouVideoViewCount}}
+        </td>
+         <td>
+          {{milliToDate(it.previouCommentTime)}}
+        </td>
+
+         <td>
+          {{it.latestVideoViewCount}}
+        </td>
+         <td>
+          {{milliToDate(it.latestCommentTime)}}
+        </td>
+        <td>
+         {{it.timegap}}
+        </td>
+         <td>
+          {{it.timegapunit}}
+        </td>
+
+         <td>
+          {{it.isghosted}}
+        </td>
+         <td>
+          {{milliToDate(it.lastcommenttime)}}
+        </td>
+
+    </tbody>
+    </table>
+
+    </div>
+  </div>
+</div>

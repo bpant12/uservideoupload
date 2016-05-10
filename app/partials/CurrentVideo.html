@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10">
+      <!--Body content-->
+<table class="table" >
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Video Link</th>
+            <th>Comments</th>
+            <th>User</th>
+            <th>Comment Time</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="it in cvideos">
+        <td>
+         
+        </td>
+       <td>
+         <a href="{{it.videoLink}}" target="_blank">{{it.videoLink}}</a>
+        </td>
+         <td>
+          {{it.comment}}
+        </td>
+
+        <td>
+          {{it.userName}}
+        </td>
+        
+         <td>
+          {{milliToDate(it.commentTime)}}
+        </td>
+
+    </tbody>
+    </table>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10">
+      <!--Body content-->
+<table class="table">
+    <thead>
+        <tr>
+              <th>id</th>
+              <th>username</th>
+              <th>password</th>
+              <th>securityquestion</th>
+              <th>securityanswer </th>
+              <th>recoveryemail</th>
+              <th>recoveryphone</th>
+              <th>isverified</th>
+              <th>comment</th>
+              <th>proxy</th>
+              <th>proxyuser</th>
+              <th>proxypassword</th>
+              <th>lastCommentTime</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="it in users">
+        <td>
+         #
+        </td>
+         <td>
+          {{it.username}}
+        </td>
+
+        <td>
+          {{it.password}}
+        </td>
+         <td>
+          {{it.securityquestion}}
+        </td>
+
+         <td>
+          {{it.securityanswer}}
+        </td>
+         <td>
+          {{it.recoveryemail}}
+        </td>
+
+          <td>
+          {{it.isverified}}
+        </td>
+         <td>
+          {{it.comment}}
+        </td>
+
+         <td>
+          {{it.proxy}}
+        </td>
+         <td>
+          {{it.proxyuser}}
+        </td>
+        <td>
+          {{it.proxy}}
+        </td>
+         <td>
+          {{it.proxypassword}}
+        </td>
+        <td>
+          {{it.lastCommentTime}}
+        </td>
+    </tbody>
+    </table>
+
+    </div>
+  </div>
+</div>
